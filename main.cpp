@@ -2,7 +2,8 @@
 #include <string>
 
 using namespace std;
-
+string getPassword();
+bool valid(string);
 int main()
 {
   string original, backup;
@@ -26,3 +27,36 @@ int main()
   return 0;
 }
 
+string getPassword()
+{
+string password;
+int not8 = 1;
+do
+{ 
+  cin>>password;
+  if( password.length() >= 8)
+  {
+    not8 = 0;
+  }
+  else
+  {
+    cout<<"Password must be at least 8 characters long.\n";
+    not8 = 1;
+  } 
+}while(not8 == 1);
+
+  return password;
+}
+
+bool valid(string password)
+{
+if(password == "password")
+{ 
+  return false;
+}
+
+else
+{
+return true;
+}
+}
